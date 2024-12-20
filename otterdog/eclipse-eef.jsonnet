@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-eef') {
+orgs.newOrg('modeling.eef', 'eclipse-eef') {
   settings+: {
     description: "",
     name: "Eclipse EEF",
