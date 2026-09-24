@@ -10,6 +10,15 @@ orgs.newOrg('modeling.eef', 'eclipse-eef') {
       default_workflow_permissions: "write",
     },
   },
+  webhooks+: [
+    orgs.newOrgWebhook('https://ci.eclipse.org/eef/github-webhook/') {
+      content_type: 'json',
+      events+: [
+        'pull_request',
+        'push',
+      ],
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('eef-website') {
       allow_merge_commit: true,
